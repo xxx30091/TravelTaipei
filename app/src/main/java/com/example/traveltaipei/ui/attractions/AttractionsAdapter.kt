@@ -16,7 +16,7 @@ class AttractionsAdapter(private val viewModel: AttractionsViewModel) : ListAdap
         }
 
         override fun areContentsTheSame(oldItem: AttractionItem, newItem: AttractionItem): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem == newItem
         }
     }
 
@@ -35,5 +35,4 @@ class AttractionsAdapter(private val viewModel: AttractionsViewModel) : ListAdap
     override fun onBindViewHolder(holder: AttractionsViewHolder, position: Int) {
         holder.bind(getItem(position), viewModel)
     }
-
 }

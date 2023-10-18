@@ -10,13 +10,8 @@ import kotlinx.coroutines.launch
 import okhttp3.Route
 
 class DetailViewModel : ViewModel() {
-
     private val _route = Channel<DetailRoute>()
     val route = _route.receiveAsFlow()
-
-    init {
-        Log.i("Arthur", "viewModel = ${this.hashCode()}")
-    }
 
     fun goBack() {
         viewModelScope.launch {
@@ -24,8 +19,14 @@ class DetailViewModel : ViewModel() {
         }
     }
 
-    sealed class DetailRoute {
-        object GoBack : DetailRoute()
+    fun goToWebView(url: String) {
+        viewModelScope.launch {
+            _route.send(DetailRoute.GoToWebView(url))
+        }
     }
 
+    sealed class DetailRoute {
+        object GoBack : DetailRoute()
+        class GoToWebView(val url: String) : DetailRoute()
+    }
 }

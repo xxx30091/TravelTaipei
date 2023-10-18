@@ -12,7 +12,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.traveltaipei.R
 import com.example.traveltaipei.databinding.FragmentAttractionsBinding
-import com.example.traveltaipei.ui.detail.DetailFragmentDirections
 import kotlinx.android.synthetic.main.dialog_language.view.rv_lang_list
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -37,16 +36,17 @@ class AttractionsFragment : Fragment() {
         val mDialogView = LayoutInflater.from(context).inflate(R.layout.dialog_language, null)
         val alertDialog = AlertDialog.Builder(context).setView(mDialogView).create()
         val mAdapter = LanguageAdapter(viewModel)
-        val rv = mDialogView.rv_lang_list
-        rv.adapter = mAdapter
+        val rvLang = mDialogView.rv_lang_list
+        rvLang.adapter = mAdapter
         mAdapter.updateList(viewModel.allLangList)
 
         lifecycleScope.launch {
             viewModel.route.collect { route ->
                 when(route) {
                     is AttractionsViewModel.NavRoute.GoToDetail -> {
-                        val action = DetailFragmentDirections.navToDetailFragment(data = route.attraction)
-                        findNavController().navigate(action)
+                        findNavController().navigate(
+                            AttractionsFragmentDirections.navToDetailFragment(data = route.attraction)
+                        )
                     }
                     is AttractionsViewModel.NavRoute.ShowLanguageList -> {
                         alertDialog.show()
@@ -60,7 +60,6 @@ class AttractionsFragment : Fragment() {
                 }
             }
         }
-
 
         return binding.root
     }

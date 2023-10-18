@@ -28,7 +28,7 @@ data class AttractionItem(
     val zipcode: String = "",
     val name: String = "",
     val staytime: String = "",
-    val officialSite: String = "",
+    val official_site: String = "",
     val category: List<CategoryItem>?,
 
 //    @Json(name = "nameZh") val nameZh: String = "",

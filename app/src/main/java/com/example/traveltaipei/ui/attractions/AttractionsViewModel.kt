@@ -55,9 +55,9 @@ class AttractionsViewModel : ViewModel() {
     }
 
     fun changeLanguage(lang: String) {
+        getAttractionsAll(lang)
         viewModelScope.launch {
             _route.send(NavRoute.ChangeLanguage(lang))
-            getAttractionsAll(lang)
             _lang.postValue(lang)
         }
     }
@@ -65,8 +65,6 @@ class AttractionsViewModel : ViewModel() {
     private fun getAttractionsAll(lang: String) {
         viewModelScope.launch {
             val result = tripRepository.getAttractionsAll(lang)
-            val resultData = result.code()
-
 //            Log.i("Arthur", result.toString())
 //            Log.i("Arthur", resultData.toString())
 //            Log.i("Arthur", result.body().toString())
