@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.traveltaipei.databinding.ItemDetailPhotoBinding
 import com.example.traveltaipei.network.model.ImagesItem
 
-class DetailPhotoAdapter() : ListAdapter<ImagesItem, DetailPhotoAdapter.ViewHolder>(DiffCallBack) {
+class DetailPhotoAdapter : ListAdapter<ImagesItem, DetailPhotoAdapter.ViewHolder>(DiffCallBack) {
 
     inner class ViewHolder(private val binding: ItemDetailPhotoBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ImagesItem, position: Int) {

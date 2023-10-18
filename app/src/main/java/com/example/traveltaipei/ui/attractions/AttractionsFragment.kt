@@ -19,7 +19,6 @@ import kotlinx.coroutines.launch
 class AttractionsFragment : Fragment() {
 
     lateinit var binding: FragmentAttractionsBinding
-    //    val viewModel by viewModels<AttractionsViewModel>()
     val viewModel: AttractionsViewModel by viewModels()
 
     override fun onCreateView(

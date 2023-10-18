@@ -1,6 +1,5 @@
 package com.example.traveltaipei.ui.attractions
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -87,5 +86,4 @@ class AttractionsViewModel : ViewModel() {
         class ChangeLanguage(val lang: String) : NavRoute()
         class Toast(val msg: String) : NavRoute()
     }
-
 }

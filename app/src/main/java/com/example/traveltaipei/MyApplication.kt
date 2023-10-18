@@ -28,7 +28,6 @@ class MyApplication : Application() {
             .create()
 
         private val client = OkHttpClient.Builder()
-//            .newBuilder()
             .addInterceptor(
                 HttpLoggingInterceptor().apply {
                     level = HttpLoggingInterceptor.Level.BODY
@@ -50,5 +49,4 @@ class MyApplication : Application() {
         super.onCreate()
         instance = this
     }
-
 }

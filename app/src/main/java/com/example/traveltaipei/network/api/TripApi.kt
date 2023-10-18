@@ -24,7 +24,4 @@ interface TripApi {
 //        lang: String
 //    ) : Response<APIResponse<ThemeItem>>
 
-//    @GET("123")
-//    fun getData(): Call<ResponseBody?>?
-
 }
