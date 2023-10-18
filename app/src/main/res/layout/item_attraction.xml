@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.traveltaipei.network.model.AttractionItem" />
+        <variable
+            name="model"
+            type="com.example.traveltaipei.ui.attractions.AttractionsViewModel" />
+<!--        <variable -->
+<!--            name="product" -->
+<!--            type="com.example.traveltaipei.network.model.AttractionItem"/>-->
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:onClick="@{() -> model.goToDetail(item)}"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/img_attraction_item"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            imgUrl="@{item.images[0].src}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tv_main_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{item.name}"
+            android:textColor="@color/gray_646464"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toStartOf="@+id/img_attraction_go_next"
+            app:layout_constraintStart_toEndOf="@+id/img_attraction_item"
+            app:layout_constraintTop_toTopOf="@+id/img_attraction_item"
+            tools:text="This is Title.This is Title.This is Title.This is Title.This is Title.This is Title.This is Title" />
+
+        <TextView
+            android:id="@+id/tv_main_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="4dp"
+            android:text="@{item.introduction}"
+            android:textStyle="bold"
+            android:textColor="@color/gray_999999"
+            android:textSize="12sp"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toBottomOf="@+id/img_attraction_item"
+            app:layout_constraintEnd_toEndOf="@+id/tv_main_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_main_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_main_title"
+            tools:text="This is content.This is content.This is content.This is content.This is content.This is content.This is content.This is content.This is content.This is content.This is content." />
+
+        <ImageView
+            android:id="@+id/img_attraction_go_next"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="@+id/img_attraction_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_attraction_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

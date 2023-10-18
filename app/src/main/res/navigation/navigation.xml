@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/attractionsFragment">
+
+    <fragment
+        android:id="@+id/attractionsFragment"
+        android:name="com.example.traveltaipei.ui.attractions.AttractionsFragment"
+        android:label="fragment_attractions"
+        tools:layout="@layout/fragment_attractions" >
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.traveltaipei.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="lang"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="data"
+            app:argType="com.example.traveltaipei.network.model.AttractionItem"
+            />
+    </fragment>
+
+    <action
+        android:id="@+id/nav_to_detailFragment"
+        app:destination="@id/detailFragment"
+        app:popUpToInclusive="true" >
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="lang"
+            android:defaultValue=""
+            app:argType="string" />
+        <argument
+            android:name="data"
+            app:argType="com.example.traveltaipei.network.model.AttractionItem"
+            />
+    </action>
+</navigation>

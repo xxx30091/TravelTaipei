@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.traveltaipei.utils.CurrentFragmentType"/>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.traveltaipei.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:background="#3b5998"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_main_toolbar_title"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="TaipeiTour"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:visibility="@{viewModel.currentFragmentType == CurrentFragmentType.ATTRACTIONS ? View.VISIBLE : View.GONE}"-->
+<!--                tools:visibility="gone" />-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_toolbar_back"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="15dp"-->
+<!--                android:src="@mipmap/ic_back"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:background=""-->
+<!--                android:visibility="@{viewModel.currentFragmentType == CurrentFragmentType.DETAIL ? View.VISIBLE : View.GONE}"-->
+<!--                app:tint="@color/white" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_detail_toolbar_title"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:visibility="@{viewModel.currentFragmentType == CurrentFragmentType.DETAIL ? View.VISIBLE : View.GONE}"-->
+<!--                tools:text="Attraction Title"/>-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/btn_setting"-->
+<!--                android:layout_width="15dp"-->
+<!--                android:layout_height="15dp"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:src="@mipmap/ic_setting"-->
+<!--                android:visibility="@{viewModel.currentFragmentType == CurrentFragmentType.ATTRACTIONS ? View.VISIBLE : View.GONE}"-->
+<!--                app:tint="@color/white" />-->
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+        <fragment
+            android:id="@+id/navHostFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:navGraph="@navigation/navigation"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,58 @@
+package com.example.traveltaipei.network.model
+
+import android.os.Parcelable
+import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class AttractionItem(
+    val nameZh: String = "",
+    val distric: String = "",
+    val nlat: Double = 0.0,
+    val openTime: String = "",
+    val openStatus: Int = 0,
+    val remind: String = "",
+    val modified: String = "",
+    val tel: String = "",
+    val id: Int = 0,
+    val fax: String = "",
+    val introduction: String = "",
+    val email: String = "",
+    val images: List<ImagesItem>?,
+    val address: String = "",
+    val months: String = "",
+    val elong: Double = 0.0,
+    val ticket: String = "",
+    val facebook: String = "",
+    val url: String = "",
+    val zipcode: String = "",
+    val name: String = "",
+    val staytime: String = "",
+    val officialSite: String = "",
+    val category: List<CategoryItem>?,
+
+//    @Json(name = "nameZh") val nameZh: String = "",
+//    @Json(name = "distric") val distric: String = "",
+//    @Json(name = "nlat") val nlat: Double = 0.0,
+//    @Json(name = "openTime") val openTime: String = "",
+//    @Json(name = "openStatus") val openStatus: Int = 0,
+//    @Json(name = "remind") val remind: String = "",
+//    @Json(name = "modified") val modified: String = "",
+//    @Json(name = "tel") val tel: String = "",
+//    @Json(name = "id") val id: Int = 0,
+//    @Json(name = "fax") val fax: String = "",
+//    @Json(name = "introduction") val introduction: String = "",
+//    @Json(name = "email") val email: String = "",
+//    @Json(name = "images") val images: List<ImagesItem>?,
+//    @Json(name = "address") val address: String = "",
+//    @Json(name = "months") val months: String = "",
+//    @Json(name = "elong") val elong: Double = 0.0,
+//    @Json(name = "ticket") val ticket: String = "",
+//    @Json(name = "facebook") val facebook: String = "",
+//    @Json(name = "url") val url: String = "",
+//    @Json(name = "zipcode") val zipcode: String = "",
+//    @Json(name = "name") val name: String = "",
+//    @Json(name = "staytime") val staytime: String = "",
+//    @Json(name = "officialSite") val officialSite: String = "",
+//    @Json(name = "category") val category: List<CategoryItem>?,
+) : Parcelable
